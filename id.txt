@@ -1,0 +1,97 @@
+>>>>first program
+
+
+# go to desktop
+cd Desktop
+
+# create project folder
+mkdir devops
+cd devops
+
+# initialize git repository
+git init
+
+# configure git
+git config --global user.name "YourName"
+git config --global user.email "your@email.com"
+
+# create file
+echo "Hello DevOps Lab" > file.txt
+
+# check status
+git status
+
+# add file
+git add file.txt
+
+# commit file
+git commit -m "Initial commit"
+
+# check log
+git log
+
+# connect remote repository
+git remote add origin https://github.com/ps-511/devops.git
+
+# rename branch
+git branch -M main
+
+# push to github
+git push -u origin main
+
+# clone repository (demonstration)
+cd ..
+git clone https://github.com/ps-511/devops.git
+
+# reset example
+cd devops
+git reset --soft HEAD~1
+
+
+
+
+
+>>second program
+
+
+# go to repository
+cd Desktop/devops
+
+# create base file
+echo "Hyy first text" > file.txt
+git add file.txt
+git commit -m "Initial file commit"
+git push origin main
+
+# create new branch
+git checkout -b feature1
+
+# modify file in feature branch
+echo "Feature branch edit" > file.txt
+git add file.txt
+git commit -m "Feature branch update"
+git push origin feature1
+
+# switch to main branch
+git checkout main
+
+# modify same line to create conflict
+echo "Main branch edit" > file.txt
+git add file.txt
+git commit -m "Main branch update"
+git push origin main
+
+# check difference
+git diff main feature1
+
+# merge branch (conflict occurs)
+git merge feature1
+
+# open file.txt and resolve conflict manually
+# remove markers and keep final text
+
+git add file.txt
+git commit -m "Resolved merge conflict"
+
+# push final merge
+git push origin main
